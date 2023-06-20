@@ -8,5 +8,5 @@ jobs:
         uses: actions/checkout@v3
       - name: show repo folder content
         run: ls
-      - name: show file content
-        run: cat test.py
+      - name: Run Python Scripts
+        run: python test.py
