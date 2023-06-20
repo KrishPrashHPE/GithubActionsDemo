@@ -6,3 +6,6 @@ jobs:
     steps:
       - name: my-step
         run: echo "Hello World!"
+        run: python --version
+        run: ls
+        run: python test.py
