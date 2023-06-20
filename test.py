@@ -11,3 +11,7 @@ import os
 print(os.listdir("."), file=f)
 
 f.close()
+import subprocess
+subprocess.run("git diff")
+
+
