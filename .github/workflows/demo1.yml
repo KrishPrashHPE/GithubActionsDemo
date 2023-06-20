@@ -3,15 +3,13 @@ on: push
 jobs:
   GettingRepo:
     runs-on: ubuntu-latest
+    container: python:latest
     steps:
       - name: Checking Out the Repo
         uses: actions/checkout@v3
-      - name: show repo folder content
-        run: ls
-      - name: show file content
-        run: cat test.py
-  Job2:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Testing Cross-Job Preservation
-        run: echo "Job2" && ls
+      - name: Running the Python Script
+        uses: python test.py
+      # - name: show repo folder content
+      #   run: ls
+      # - name: show file content
+      #   run: cat test.py
