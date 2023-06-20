@@ -3,8 +3,8 @@ on: push
 jobs:
   GettingRepo:
     runs-on: ubuntu-latest
-    container:
-      image: python:latest
+    # container:
+    #   image: python:latest
     steps:
       - name: Checking Out the Repo
         uses: actions/checkout@v3
