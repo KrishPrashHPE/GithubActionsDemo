@@ -9,6 +9,6 @@ jobs:
       - name: Checking if Python exists
         run: python --version
       - name: Checking File Structure
-        run: ls
+        run: echo $(ls)
       - name: Trying to run code
         run: python test.py
