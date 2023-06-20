@@ -1,14 +1,17 @@
 name: hello-world
 on: push
 jobs:
-  my-job:
+  GettingRepo:
     runs-on: ubuntu-latest
     steps:
-      - name: first step
-        run: echo "Hello World!"
-      - name: Checking if Python exists
-        run: python --version
-      - name: Checking File Structure
+      - name: Checking Out the Repo
+        uses: actions/checkout@v3
+      - name: show repo folder content
+        run: ls
+      - name: show file content
         run: cat test.py
-      # - name: Trying to run code
-      #   run: python test.py
+  Job2:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Testing Cross-Job Preservation
+        run: echo "Job2" && ls
