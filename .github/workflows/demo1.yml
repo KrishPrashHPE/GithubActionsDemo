@@ -10,3 +10,12 @@ jobs:
         run: ls
       - name: Run Python Scripts
         run: python test.py
+      - name: show repo folder content
+        run: ls
+      - name: Naming Convention Enforcement
+        run: | 
+            if [[ ! "$(echo ${{ github.event.push.title }})" =~ ^GLCP-[0-9]+:[[:space:]]([[:space:]]|[a-zA-Z0-9\/\\._-])+$ ]]; then
+              echo "Pull request title does not follow the required pattern. Pull request titles must follow the convention: GLCP-????: *"
+              exit 1
+          fi
+      # - name: Checking Resource Output
