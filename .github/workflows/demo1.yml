@@ -4,8 +4,11 @@ jobs:
   my-job:
     runs-on: ubuntu-latest
     steps:
-      - name: my-step
+      - name: first step
         run: echo "Hello World!"
+      - name: Checking if Python exists
         run: python --version
+      - name: Checking File Structure
         run: ls
+      - name: Trying to run code
         run: python test.py
